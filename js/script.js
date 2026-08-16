@@ -66,8 +66,12 @@ applyLang(currentLang);
 const SCRAMBLE_CHARS = '!<>-_\\/[]{}—=+*^?#01アイウエオ';
 
 function scramble(el) {
-  if (el._scrambleTimer) clearInterval(el._scrambleTimer);
-  const original = el.textContent;
+  if (el._scrambleTimer) {
+    clearInterval(el._scrambleTimer);
+  } else {
+    el.dataset.originalText = el.textContent;
+  }
+  const original = el.dataset.originalText;
   const totalFrames = 12;
   let frame = 0;
 
