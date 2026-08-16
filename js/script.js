@@ -61,3 +61,35 @@ langToggle.addEventListener('click', () => {
 });
 
 applyLang(currentLang);
+
+// efeito hacker: letras embaralhadas no hover dos títulos
+const SCRAMBLE_CHARS = '!<>-_\\/[]{}—=+*^?#01アイウエオ';
+
+function scramble(el) {
+  if (el._scrambleTimer) clearInterval(el._scrambleTimer);
+  const original = el.textContent;
+  const totalFrames = 12;
+  let frame = 0;
+
+  el._scrambleTimer = setInterval(() => {
+    frame++;
+    el.textContent = original
+      .split('')
+      .map((ch, i) => {
+        if (ch === ' ') return ' ';
+        const revealAt = (i / original.length) * totalFrames;
+        if (frame > revealAt + 3) return ch;
+        return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+      })
+      .join('');
+
+    if (frame >= totalFrames + 3) {
+      el.textContent = original;
+      clearInterval(el._scrambleTimer);
+    }
+  }, 35);
+}
+
+document.querySelectorAll('.scramble').forEach(el => {
+  el.addEventListener('mouseenter', () => scramble(el));
+});
