@@ -135,8 +135,8 @@ const CHATBOT_FAQ = [
   {
     pt: 'Você está disponível para novas oportunidades?',
     en: 'Are you open to new opportunities?',
-    aPt: 'Sim, estou aberto a oportunidades em Quality Assurance 🚀',
-    aEn: "Yes, I'm open to Quality Assurance opportunities 🚀"
+    aPt: 'Sim, estou aberto a oportunidades em Quality Assurance! Bora conversar? 🚀',
+    aEn: "Yes, I'm open to Quality Assurance opportunities! Let's talk? 🚀"
   },
   {
     pt: 'Como posso entrar em contato?',
