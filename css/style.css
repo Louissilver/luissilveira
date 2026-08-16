@@ -232,8 +232,9 @@ ul{list-style:none;}
   background:#050a16; border:1px solid var(--border); border-radius:12px;
   overflow:hidden; font-family:var(--mono); margin-top:32px; max-width:640px;
 }
-.terminal--link{ display:block; max-width:none; margin-top:0; transition: all .25s; }
+.terminal--link{ display:flex; flex-direction:column; height:100%; max-width:none; margin-top:0; transition: all .25s; }
 .terminal--link:hover{ border-color:var(--blue); transform:translateY(-4px); box-shadow:0 14px 30px rgba(61,139,255,.18); }
+.terminal--link .terminal__body{ flex:1; }
 .terminal__bar{
   display:flex; align-items:center; gap:7px; padding:10px 14px;
   background:rgba(255,255,255,.03); border-bottom:1px solid var(--border);
